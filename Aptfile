@@ -1,3 +1,4 @@
+default-jre
 libsm6
 libice6
 libx11-xcb1
