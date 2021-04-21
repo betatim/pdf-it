@@ -1,2 +1,3 @@
-:repo:deb http://ppa.launchpad.net/libreoffice/ppa/ubuntu focal main
-libreoffice
+default-jre
+libx11-xcb1
+libxinerama1
