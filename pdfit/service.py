@@ -80,7 +80,7 @@ class PdfCreator:
                         f.write(SOFFICE_CONFIG)
 
                     proc = await asyncio.create_subprocess_exec(
-                        "/usr/local/bin/soffice",
+                        "soffice",
                         f"-env:UserInstallation=file://{soffice_dir}",
                         "--headless",
                         "--convert-to",
