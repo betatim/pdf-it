@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block head %}
+{% if status == "pending" %}
+<script type="module">
+  import { connectStreamSource } from 'https://cdn.skypack.dev/@hotwired/turbo';
+
+  const wsUrl = ((window.location.protocol === "https:") ? "wss://" : "ws://") + window.location.host + "/status/{{ job_id }}"
+
+  document.eventSource = new WebSocket(wsUrl);
+  document.eventSource.onerror = function (evt) {
+    document.getElementById("refresh").style.display = "unset"
+  };
+  connectStreamSource(document.eventSource);
+</script>
+{% end %}
+{% end %}
+
+{% block body %}
+
+{% if status == "pending" %}
+<h1 id="header">Your PDF is being converted</h1>
+
+<div id="status">
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Processing...</span>
+  </div>
+  <p id="refresh" style="display: none">
+    <a href="/convert/{{ job_id }}">Refresh this Page</a> to check the status again.
+  </p>
+</div>
+
+{% elif status == "ok" %}
+<h1>Your PDF is ready</h1>
+
+<p><a href="/documents/{{ job_id }}/output/document.pdf">Download your PDF</a></p>
+
+<p><a href="/">Convert another document</a></p>
+
+{% else %}
+<h1>We couldn't find your PDF</h1>
+{% end %}
+
+{% end %}

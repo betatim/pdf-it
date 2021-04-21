@@ -1,0 +1,24 @@
+{% extends "base.html" %} {% block body %}
+<h1>Convert a document to PDF</h1>
+
+<div id="convert">
+  <form action="/convert" method="POST" enctype="multipart/form-data">
+    <div class="mb-3">
+      <label for="document" class="form-label">Your document</label>
+      <input
+        class="form-control"
+        type="file"
+        id="document"
+        name="document"
+        aria-describedby="documentHelp"
+        accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/pdf"
+        required
+      />
+      <div id="documentlHelp" class="form-text">
+        The document you want to convert to a PDF.
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+{% end %}
