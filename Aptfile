@@ -1,8 +1,1 @@
-default-jre
-libsm6
-libice6
-libx11-xcb1
-libxinerama1
-libdbus-glib-1-2
-libharfbuzz0b
-libharfbuzz-icu0
+libreoffice
