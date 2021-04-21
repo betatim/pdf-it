@@ -10,7 +10,8 @@ with a remote like `ssh://git@heroku.com/pdf-it.git` called `heroku` and then
 running `git push heroku main:main`
 
 We use the libreoffice buildpack for heroku: https://github.com/BlueTeaLondon/heroku-buildpack-libreoffice-for-heroku-18. If you setup a new heroku instance follow the instructions
-for adding the buildpack.
+for adding the buildpack. Despite the name this buildpack can also be used
+with heroku-20.
 
 ## Local development
 
