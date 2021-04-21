@@ -1,1 +1,1 @@
-web: pdfitapp --port=$PORT --debug
+web: python run.py --port=$PORT --debug

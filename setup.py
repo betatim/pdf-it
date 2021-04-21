@@ -20,7 +20,7 @@ setuptools.setup(
         "Topic :: Communications :: Email",
         "Topic :: Communications :: Email :: Mail Transport Agents",
     ],
-    python_requires=">=3.8",
+    python_requires=">=3.9",
     install_requires=["tornado"],
     entry_points={
         "console_scripts": [
